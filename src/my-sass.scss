@@ -1,0 +1,82 @@
+@mixin fullWidth {
+    width : 100%;
+}
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin smallFont {
+    font-size: 11px;
+}
+
+@mixin mediumFont {
+    font-size: 14px;
+}
+
+@mixin input {
+    border-radius: unset;
+    border: solid 1px lightgray;
+}
+
+@mixin select {
+    @include input();
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+$black : #303030;
+
+.container {
+    @include fullWidth();
+    padding: 1rem;
+    height: 150px;
+}
+
+.githubLogo {
+    display: flex;
+    width: 50%;
+    margin-bottom: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    img {
+        padding-right: 10px;
+    }
+    div {
+        margin: auto 0px;
+        line-height: 12px;
+        .title {
+            @include mediumFont();
+        }
+        .subtitle {
+            @include smallFont();
+            color: darkgray;
+        }
+    }
+}
+
+.searchContainer {
+    @include fullWidth();
+    margin-bottom: 2rem;
+    input[type=text] {
+        width: 400px;
+        height: 2rem;
+        margin-right: 10px;
+        @include input();
+    }
+    select {
+        @include select();
+        height: 2.2rem;
+        padding: 0 10px;
+        color: darkgray;
+    }
+}
+
+.boxContainer {
+    @include fullWidth();
+}
+
+.box {
+    width: 30%;
+}
